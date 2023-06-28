@@ -8,6 +8,9 @@ import lombok.Data;
 @Data
 public class Checkout {
 
+    public Checkout() {
+    }
+
     public Checkout(String userEmail, String checkoutDate,
                     String returnDate, Long bookId) {
         this.userEmail = userEmail;
