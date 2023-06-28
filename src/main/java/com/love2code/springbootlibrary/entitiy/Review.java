@@ -1,6 +1,6 @@
 package com.love2code.springbootlibrary.entitiy;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 import java.util.Date;
