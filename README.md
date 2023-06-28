@@ -10,4 +10,5 @@ XML file was initialized with these packages:
 * MySQL driver
   
 Scripts were loaded into MySQL workbench to populate data and set user access.
+Added dependency for okta.
  
