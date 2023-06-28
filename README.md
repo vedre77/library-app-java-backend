@@ -11,6 +11,6 @@ XML file was initialized with these packages:
 
 <hr>
 
-* Scripts loaded into MySQL workbench to populate data and set user access.
-* Added dependency for okta.
+* Scripts loaded into MySQL workbench to populate data and set user access
+* Added dependency for okta
  
