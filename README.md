@@ -9,6 +9,6 @@ XML file was initialized with these packages:
 * Spring Data JPA
 * MySQL driver
   
-Scripts were loaded into MySQL workbench to populate data and set user access.
-Added dependency for okta.
+* Scripts loaded into MySQL workbench to populate data and set user access.
+* Added dependency for okta.
  
