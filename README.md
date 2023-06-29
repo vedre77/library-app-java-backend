@@ -8,6 +8,9 @@ XML file was initialized with these packages:
 * Rest Repositories
 * Spring Data JPA
 * MySQL driver
-  
-Scripts were loaded into MySQL workbench to populate data and set user access.
+
+<hr>
+
+* Scripts loaded into MySQL workbench to populate data and set user access
+* Added dependency for okta
  
