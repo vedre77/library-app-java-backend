@@ -7,7 +7,6 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.web.accept.ContentNegotiationStrategy;
 import org.springframework.web.accept.HeaderContentNegotiationStrategy;
-import org.springframework.web.cors.CorsConfiguration;
 
 @Configuration
 public class SecurityConfig {
@@ -22,15 +21,15 @@ public class SecurityConfig {
         http.authorizeRequests(configurer ->
                         configurer
                                 .antMatchers("/api/books/secure/**",
-                                    "/api/reviews/secure/**",
-                                    "/api/messages/secure/**",
-                                    "/api/admin/secure/**")
+                                        "/api/reviews/secure/**",
+                                        "/api/messages/secure/**",
+                                        "/api/admin/secure/**")
                                 .authenticated())
                 .oauth2ResourceServer()
                 .jwt();
 
         // Add CORS filters
-        http.cors().configurationSource(request -> new CorsConfiguration().applyPermitDefaultValues());
+        http.cors();
 
         // Add content negotiation strategy
         http.setSharedObject(ContentNegotiationStrategy.class,
