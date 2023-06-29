@@ -24,9 +24,8 @@ public class Review {
     @Column(name = "rating")
     private double rating;
 
-    @ManyToOne
-    @JoinColumn(name = "book_id")
-    private Book book;
+    @Column(name = "book_id")
+    private Long bookId;
 
     @Column(name = "review_description")
     private String reviewDescription;
