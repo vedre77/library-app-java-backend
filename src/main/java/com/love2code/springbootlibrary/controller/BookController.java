@@ -1,6 +1,7 @@
 package com.love2code.springbootlibrary.controller;
 
 import com.love2code.springbootlibrary.entitiy.Book;
+import com.love2code.springbootlibrary.responsemodels.ShelfCurrentLoansResponse;
 import com.love2code.springbootlibrary.service.BookService;
 import com.love2code.springbootlibrary.utils.ExtractJWT;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,13 +21,13 @@ public class BookController {
         this.bookService = bookService;
     }
 
-//    @GetMapping("/secure/currentloans")
-//    public List<ShelfCurrentLoansResponse> currentLoans(@RequestHeader(value = "Authorization") String token)
-//            throws Exception
-//    {
-//        String userEmail = ExtractJWT.payloadJWTExtraction(token, "\"sub\"");
-//        return bookService.currentLoans(userEmail);
-//    }
+    @GetMapping("/secure/currentloans")
+    public List<ShelfCurrentLoansResponse> currentLoans(@RequestHeader(value = "Authorization") String token)
+            throws Exception
+    {
+        String userEmail = ExtractJWT.payloadJWTExtraction(token, "\"sub\"");
+        return bookService.currentLoans(userEmail);
+    }
 
     @GetMapping("/secure/currentloans/count")
     public int currentLoansCount(@RequestHeader(value = "Authorization") String token) {
@@ -46,17 +47,17 @@ public class BookController {
         return bookService.checkoutBook(userEmail, bookId);
     }
 
-//    @PutMapping("/secure/return")
-//    public void returnBook(@RequestHeader(value = "Authorization") String token,
-//                           @RequestParam Long bookId) throws Exception {
-//        String userEmail = ExtractJWT.payloadJWTExtraction(token, "\"sub\"");
-//        bookService.returnBook(userEmail, bookId);
-//    }
+    @PutMapping("/secure/return")
+    public void returnBook(@RequestHeader(value = "Authorization") String token,
+                           @RequestParam Long bookId) throws Exception {
+        String userEmail = ExtractJWT.payloadJWTExtraction(token, "\"sub\"");
+        bookService.returnBook(userEmail, bookId);
+    }
 
-//    @PutMapping("/secure/renew/loan")
-//    public void renewLoan(@RequestHeader(value = "Authorization") String token,
-//                          @RequestParam Long bookId) throws Exception {
-//        String userEmail = ExtractJWT.payloadJWTExtraction(token, "\"sub\"");
-//        bookService.renewLoan(userEmail, bookId);
-//    }
+    @PutMapping("/secure/renew/loan")
+    public void renewLoan(@RequestHeader(value = "Authorization") String token,
+                          @RequestParam Long bookId) throws Exception {
+        String userEmail = ExtractJWT.payloadJWTExtraction(token, "\"sub\"");
+        bookService.renewLoan(userEmail, bookId);
+    }
 }
